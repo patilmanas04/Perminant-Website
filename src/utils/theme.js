@@ -7,3 +7,13 @@ export const darkTheme = {
         card: "#333333"
     }
 }
+
+export const lightTheme = {
+  colors: {
+      primary: "#FFFFFF",
+      secondary: "#000000",
+      primaryAccent: "#3D18A7",
+      secondaryAccent: "#2D2438",
+      card: "#FFFFFF"
+  }
+}
