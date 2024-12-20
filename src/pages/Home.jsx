@@ -1,10 +1,19 @@
-import React from 'react'
-import LogoWhite from '../components/icons/LogoWhite'
-import LogoBlack from '../components/icons/LogoBlack'
+import Footer from "../components/Footer/Index"
+import Main from "../components/Main/Index"
+import Navbar from "../components/Navbar/Index"
+import Sidebar from "../components/Sidebar/Index"
+import { HomeLayout } from "./Styles"
 
 const Home = () => {
     return (
-        <h1>Perminant Home page</h1>
+      <>
+        <HomeLayout>
+          <Navbar />
+          <Main />
+          <Sidebar />
+          <Footer />
+        </HomeLayout>
+      </>
     )
 }
 
