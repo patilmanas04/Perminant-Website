@@ -1,14 +1,44 @@
-const Sidebar = () => {
-  return (
-    <aside style={{
-      gridArea: "sidebar",
-      backgroundColor: "teal",
-      padding: "1rem",
-      position: "sticky",
-      top: 51.2,
-      height: "calc(100vh - 51.2px)"
-    }}>Sidebar</aside>
-  )
-}
+import {
+  SidebarWrapper,
+  SidebarMenu,
+  SidebarMenuItem,
+  Anchor,
+  SocialMediaLinks,
+  SocialMediaLink,
+} from "./Styles";
+import { socialMediaLinks } from "../../data/constants";
 
-export default Sidebar
+const Sidebar = ({ openMobileMenu }) => {
+  return (
+    <SidebarWrapper className={openMobileMenu ? "active" : ""}>
+      <SidebarMenu>
+        <SidebarMenuItem>
+          <Anchor>Home</Anchor>
+        </SidebarMenuItem>
+        <SidebarMenuItem>
+          <Anchor>About us</Anchor>
+        </SidebarMenuItem>
+        <SidebarMenuItem>
+          <Anchor>Services</Anchor>
+        </SidebarMenuItem>
+        <SidebarMenuItem>
+          <Anchor>Projects</Anchor>
+        </SidebarMenuItem>
+        <SidebarMenuItem>
+          <Anchor>Contact</Anchor>
+        </SidebarMenuItem>
+      </SidebarMenu>
+      <SocialMediaLinks>
+        {socialMediaLinks.map((link, index) => {
+          return (
+            <SocialMediaLink key={index} href={link.url}>
+              {link.icon}
+            </SocialMediaLink>
+          );
+        })}
+      </SocialMediaLinks>
+    </SidebarWrapper>
+  );
+};
+
+export default Sidebar;
