@@ -10,7 +10,6 @@ import {
 import LogoWhite from "../icons/LogoWhite";
 import Menu from "../icons/Menu";
 import Close from "../icons/Close";
-import { useState } from "react";
 
 const Navbar = ({ openMobileMenu, setOpenMobileMenu }) => {
   const toggleMenu = () => {

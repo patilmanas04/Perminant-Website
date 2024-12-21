@@ -8,6 +8,7 @@ export const NavbarWrapper = styled.nav`
   position: sticky;
   top: 0;
   grid-area: navbar;
+  z-index: 100;
 `;
 
 export const NavbarContainer = styled.div`
