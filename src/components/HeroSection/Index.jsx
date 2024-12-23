@@ -10,14 +10,14 @@ import {
   HeroSectionImage,
 } from "./Styles";
 
-const HeroSection = () => {
+const HeroSection = ({ homeRef }) => {
   return (
-    <HeroSectionWrapper>
+    <HeroSectionWrapper id="home" ref={homeRef}>
       <HeroSectionContent>
         <Title>{heroSectionContent.title}</Title>
         <Subtitle>{heroSectionContent.subtitle}</Subtitle>
         <Description>{heroSectionContent.descripion}</Description>
-        <Anchor>
+        <Anchor href="#services">
           <CTAButton>{heroSectionContent.ctaButton}</CTAButton>
         </Anchor>
       </HeroSectionContent>

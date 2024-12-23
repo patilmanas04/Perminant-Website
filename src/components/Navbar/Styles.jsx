@@ -9,6 +9,14 @@ export const NavbarWrapper = styled.nav`
   top: 0;
   grid-area: navbar;
   z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 480px) {
+    height: 60px;
+    padding: 10px 20px;
+  }
 `;
 
 export const NavbarContainer = styled.div`
@@ -20,6 +28,11 @@ export const NavbarContainer = styled.div`
 
 export const NavbarLogo = styled.div`
   height: 40px;
+  cursor: pointer;
+
+  @media screen and (max-width: 480px) {
+    height: 35px;
+  }
 `;
 
 export const SocialMediaLinks = styled.div`
@@ -67,5 +80,10 @@ export const MenuIcon = styled.div`
 
   @media screen and (max-width: 880px) {
     display: block;
+  }
+
+  @media screen and (max-width: 480px) {
+    width: 35px;
+    height: 35px;
   }
 `;

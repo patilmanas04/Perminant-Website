@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const Home = () => {
   const [openMobileMenu, setOpenMobileMenu] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   return (
     <HomeLayout>
@@ -14,8 +15,12 @@ const Home = () => {
         openMobileMenu={openMobileMenu}
         setOpenMobileMenu={setOpenMobileMenu}
       />
-      <Main />
-      <Sidebar openMobileMenu={openMobileMenu} />
+      <Main setActiveSection={setActiveSection} />
+      <Sidebar
+        openMobileMenu={openMobileMenu}
+        setOpenMobileMenu={setOpenMobileMenu}
+        activeSection={activeSection}
+      />
       <Footer />
     </HomeLayout>
   );

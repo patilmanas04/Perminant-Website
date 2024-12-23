@@ -13,6 +13,7 @@ export const SidebarWrapper = styled.aside`
   align-items: center;
   grid-area: sidebar;
   overflow-y: auto;
+  z-index: 1000;
 
   @media (max-width: 880px) {
     position: fixed;
@@ -27,6 +28,11 @@ export const SidebarWrapper = styled.aside`
 
   &.active {
     right: 0;
+  }
+
+  @media screen and (max-width: 480px) {
+    top: 50px;
+    max-height: calc(100vh - 50px);
   }
 `;
 
@@ -48,6 +54,10 @@ export const SidebarMenuItem = styled.li`
   user-select: none;
 
   &:hover {
+    background-color: ${({ theme }) => theme.colors.primaryAccent};
+  }
+
+  &.active {
     background-color: ${({ theme }) => theme.colors.primaryAccent};
   }
 `;

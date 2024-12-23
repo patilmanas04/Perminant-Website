@@ -25,7 +25,7 @@ const Navbar = ({ openMobileMenu, setOpenMobileMenu }) => {
         <SocialMediaLinks>
           {socialMediaLinks.map((link, index) => {
             return (
-              <SocialMediaLink key={index} href={link.url}>
+              <SocialMediaLink key={index} href={link.url} target="_blank">
                 {link.icon}
               </SocialMediaLink>
             );

@@ -8,25 +8,38 @@ import {
 } from "./Styles";
 import { socialMediaLinks } from "../../data/constants";
 
-const Sidebar = ({ openMobileMenu }) => {
+const Sidebar = ({ openMobileMenu, setOpenMobileMenu, activeSection }) => {
   return (
     <SidebarWrapper className={openMobileMenu ? "active" : ""}>
       <SidebarMenu>
-        <SidebarMenuItem>
-          <Anchor>Home</Anchor>
-        </SidebarMenuItem>
-        <SidebarMenuItem>
-          <Anchor>About us</Anchor>
-        </SidebarMenuItem>
-        <SidebarMenuItem>
-          <Anchor>Services</Anchor>
-        </SidebarMenuItem>
-        <SidebarMenuItem>
-          <Anchor>Projects</Anchor>
-        </SidebarMenuItem>
-        <SidebarMenuItem>
-          <Anchor>Contact</Anchor>
-        </SidebarMenuItem>
+        <Anchor href="#home" onClick={() => setOpenMobileMenu(false)}>
+          {" "}
+          <SidebarMenuItem className={activeSection === "home" ? "active" : ""}>
+            Home
+          </SidebarMenuItem>
+        </Anchor>
+        <Anchor href="#about" onClick={() => setOpenMobileMenu(false)}>
+          {" "}
+          <SidebarMenuItem
+            className={activeSection === "about" ? "active" : ""}
+          >
+            About us
+          </SidebarMenuItem>
+        </Anchor>
+        <Anchor href="#services" onClick={() => setOpenMobileMenu(false)}>
+          <SidebarMenuItem
+            className={activeSection === "services" ? "active" : ""}
+          >
+            Services
+          </SidebarMenuItem>
+        </Anchor>
+        <Anchor href="#contact" onClick={() => setOpenMobileMenu(false)}>
+          <SidebarMenuItem
+            className={activeSection === "contact" ? "active" : ""}
+          >
+            Contact
+          </SidebarMenuItem>
+        </Anchor>
       </SidebarMenu>
       <SocialMediaLinks>
         {socialMediaLinks.map((link, index) => {
